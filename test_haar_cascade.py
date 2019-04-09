@@ -3,7 +3,7 @@ import numpy as np
 
 cap = cv2.VideoCapture(0)
 
-hand_cascade = cv2.CascadeClassifier('haar_cascade/Hand_haar_cascade.xml')
+hand_cascade = cv2.CascadeClassifier('haar_cascade/hand_haar_cascade.xml')
 
 while(True):
     ret, frame = cap.read()
