@@ -12,8 +12,8 @@ CAPTURE = 32
 dir_img_training = './pre-processed/training/'
 dir_img_test = './pre-processed/test/'
 
-QTD_TRAIN = 300
-QTD_TEST = 100
+QTD_TRAIN = 150
+QTD_TEST = 50
 
 def create_folder(folder_name):
     if not os.path.exists(dir_img_training + folder_name):
