@@ -14,7 +14,8 @@ from keras.preprocessing import image
 image_x, image_y = 64,64
 
 
-classifier = load_model('../models/model_epoch_48_98.6_final.h5')
+classifier = load_model('../models/other_models/model_epoch_48_98.6_final.h5')
+
 classes = 21
 letras = {'0' : 'A', '1' : 'B', '2' : 'C', '3': 'D', '4': 'E', '5':'F', '6':'G', '7': 'I', '8':'L', '9':'M', '10':'N', '11': 'O', '12':'P', '13':'Q', '14':'R', '15':'S', '16':'T', '17':'U', '18':'V', '19':'W','20':'Y'}
 
@@ -48,11 +49,15 @@ while True:
     img = cv2.rectangle(frame, (425,100),(625,300), (0,255,0), thickness=2, lineType=8, shift=0)
 
     imcrop = img[102:298, 427:623]
-        
-    cv2.putText(frame, str(img_text[1]), (30, 400), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0, 255, 0))
-    cv2.imshow("test", frame)
-    cv2.imshow("mask", imcrop)
     
+    output = np.ones((150, 150, 3)) * 255 #imagem 150x150, com fundo branco e 3 canais para as cores
+        
+    cv2.putText(output, str(img_text[1]), (15, 130), cv2.FONT_HERSHEY_TRIPLEX, 6, (255, 0, 0))
+    
+    cv2.imshow("ROI", imcrop)
+    cv2.imshow("FRAME", frame)
+    cv2.imshow("PREDICT", output)
+   
     imggray = cv2.cvtColor(imcrop,cv2.COLOR_BGR2GRAY)
     
     img_name = "../temp/img.png"

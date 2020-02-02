@@ -16,7 +16,7 @@ import datetime
 import h5py
 import time
 
-EPOCHS = 50
+EPOCHS = 30
 CLASS = 21
 FILE_NAME = 'cnn_model_LIBRAS_'
 
@@ -44,7 +44,7 @@ training_set = train_datagen.flow_from_directory(
         target_size=(64, 64),
         color_mode = 'rgb',
         batch_size=32,
-        shuffle=True,
+        shuffle=False,
         class_mode='categorical')
 
 test_set = test_datagen.flow_from_directory(
@@ -52,7 +52,7 @@ test_set = test_datagen.flow_from_directory(
         target_size=(64, 64),
         color_mode = 'rgb',
         batch_size=32,
-        shuffle=True,
+        shuffle=False,
         class_mode='categorical')
 
 # inicializar e otimizar modelo
@@ -73,7 +73,7 @@ classifier = model.fit_generator(
         epochs=EPOCHS,
         validation_data = test_set,
         validation_steps= (test_set.n // test_set.batch_size),
-        shuffle = True,
+        shuffle = False,
         verbose=2,
         callbacks = [early_stopping_monitor]
       )
@@ -97,7 +97,7 @@ print('[INFO] Summary: ')
 model.summary()
 
 print("\n[INFO] Avaliando a CNN...")
-score = model.evaluate_generator(generator=test_set, steps=100, verbose=1)
+score = model.evaluate_generator(generator=test_set, steps=(test_set.n // test_set.batch_size), verbose=1)
 print('[INFO] Accuracy: %.2f%%' % (score[1]*100), '| Loss: %.5f' % (score[0]))
 
 print("[INFO] Sumarizando loss e accuracy para os datasets 'train' e 'test'")

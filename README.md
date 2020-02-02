@@ -1,4 +1,8 @@
-# Redes Neurais Convolucionais
+# Redes Neurais Convolucionais - LIBRAS :hand: :raised_hand: :fist: :point_up:
+---
+<b>I just published Deep Learning & Visão computacional: REDES NEURAIS CONVOLUCIONAIS https://link.medium.com/Jjnt43P0K3</b>  
+
+---
 
 Esse projeto tem como objetivo gerar um classificador com Redes Neurais Convolucionais para reconhecimento de gestos do alfabeto em LIBRAS. 
 
@@ -9,15 +13,8 @@ INPUT => CONV => POOL => CONV => POOL => CONV => POOL => FC => FC => OUTPUT
 ```
 
 #### Requirements
-> Criar um ambiente no Anaconda: 
-- conda create --name nome_ambiente 
->Ativar o ambiente e instalar as bibliotecas: 
-- source activate nome_ambiente
-- conda install -c anaconda tensorflow 
-- conda install -c conda-forge keras 
-- conda install -c anaconda scikit-learn 
-- conda install -c conda-forge matplotlib
-- conda install -c anaconda pydot
+
+> conda env create -f environment.yml 
 
 #### Structure
 
@@ -35,10 +32,16 @@ INPUT => CONV => POOL => CONV => POOL => CONV => POOL => FC => FC => OUTPUT
 
 <br>
 
+#### Use
+> conda activate cnn_libras  
+> python app_64x64x1.py 
+
 #### References
 
 CNN: http://cs231n.github.io/convolutional-networks/ 
 
 Documentação Keras: https://keras.io/
 
+--- 
+@Author: [Lucas Lacerda](https://www.linkedin.com/in/lucaaslb/)  :beer: :pizza:
 
