@@ -1,6 +1,11 @@
 # Redes Neurais Convolucionais - LIBRAS :hand: :raised_hand: :fist: :point_up:
 ---
-<b>I just published Deep Learning & Visão computacional: REDES NEURAIS CONVOLUCIONAIS https://link.medium.com/Jjnt43P0K3</b>  
+<b>Deep Learning & Visão computacional: REDES NEURAIS CONVOLUCIONAIS https://link.medium.com/Jjnt43P0K3</b>  
+
+
+<p align="center">
+  <img src="demo/demo_cnn_libras.gif">
+</p>
 
 ---
 
@@ -12,11 +17,15 @@ Esse projeto tem como objetivo gerar um classificador com Redes Neurais Convoluc
 INPUT => CONV => POOL => CONV => POOL => CONV => POOL => FC => FC => OUTPUT 
 ```
 
-#### Requirements
+#### Requisitos
 
 > conda env create -f environment.yml 
 
-#### Structure
+#### Execução
+> conda activate cnn_libras  
+> python app_64x64x1.py 
+
+#### Estrutura dos arquivos
 
 > Dataset/ - Contem o dataset e scripts para gerar novas imagens <br>
 > Main/ <br>
@@ -32,11 +41,8 @@ INPUT => CONV => POOL => CONV => POOL => CONV => POOL => FC => FC => OUTPUT
 
 <br>
 
-#### Use
-> conda activate cnn_libras  
-> python app_64x64x1.py 
 
-#### References
+#### Referências
 
 CNN: http://cs231n.github.io/convolutional-networks/ 
 
